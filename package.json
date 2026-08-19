@@ -5,7 +5,9 @@
   "type": "module",
   "main": "./lib/host.js",
   "exports": {
-    ".": "./lib/host.js"
+    ".": "./lib/host.js",
+    "./lib/host": "./lib/host.js",
+    "./lib/*": "./lib/*"
   },
   "dsh": {
     "bundle": {
