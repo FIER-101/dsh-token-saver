@@ -21,16 +21,19 @@
 - **用量监控**：`token_usage` 工具查看当前会话总 token、上下文占用、开销最高节点。
 - **可开关**：压缩可在对话中开启/关闭。
 
-## 📥 安装
+## 📥 安装（Install）
 
-持久化安装（标准 Cordis 插件）：
-1. 将 `src/standard-host.js` 放入你的 agent preset 的 `plugins/` 目录。
-2. 在 `agent.cordis.yml` 加一行：
-   ```yaml
-   - id: token-saver
-     name: './plugins/token-saver.js'
-   ```
-3. 确保 preset 的 `node_modules/@deepseek-ai` 可解析 `@deepseek-ai/dsh-tools`（可将预设目录下建 junction 指向 DSH 的 node_modules）。
+一键部署（profile bundle，符合 DSH 设计）：
+
+```bash
+# 1. 先确保 pnpm 可用（corepack enable / 或安装 pnpm）
+# 2. 一键安装到你的 DSH profile（默认 web）：
+dsh plugin --profile web add @dsh-plugins/token-saver
+
+# 3. 重启 dsh 生效
+```
+
+安装后出现在 **设置 → 插件** 列表，所有会话永久可用。也支持本地开发安装：`dsh plugin --profile web add <本仓库路径>`。
 
 ## 🛠 工具
 

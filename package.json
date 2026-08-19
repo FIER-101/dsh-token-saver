@@ -1,0 +1,16 @@
+{
+  "name": "@dsh-plugins/token-saver",
+  "version": "1.0.0",
+  "description": "DSH Token 管家（profile bundle）：工具输出智能压缩 + 用量统计。安装后出现在插件列表，所有会话可用。",
+  "type": "module",
+  "main": "./lib/host.js",
+  "exports": {
+    ".": "./lib/host.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

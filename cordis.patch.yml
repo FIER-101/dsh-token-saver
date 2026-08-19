@@ -1,0 +1,7 @@
+# @dsh-plugins/token-saver —— profile bundle 补丁层
+# 安装后由 `dsh plugin add` 加入 dsh.profile.bundles，插入 host 层插件行，
+# 使其出现在 设置→插件 列表，并让所有会话可用。
+# name 指向包内相对文件；依赖（@deepseek-ai/*）从 profile node_modules 解析。
+- insert:
+    - id: token-saver
+      name: '@dsh-plugins/token-saver/lib/host'
