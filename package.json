@@ -7,11 +7,20 @@
   "exports": {
     ".": "./lib/host.js",
     "./lib/host": "./lib/host.js",
-    "./lib/*": "./lib/*"
+    "./lib/*": "./lib/*",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
   },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
     }
   },
   "license": "MIT"
