@@ -76,6 +76,7 @@ async function apply(ctx) {
       if (!session && sessions && exec && exec.agent && exec.agent.session) session = sessions.get(exec.agent.session.id);
       if (!session || !tm) return { available: false, message: '无法定位会话或 tokenMeter 未启用' };
       const m = tm.measure(session);
+      if (!m) return { available: false, message: '无法测量该会话的用量（tokenMeter 未就绪）' };
       const top = m.nodes.slice().sort((a, b) => b.tokens - a.tokens).slice(0, 10);
       return {
         available: true,
